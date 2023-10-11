@@ -1,0 +1,236 @@
+:root {
+    --color-skin: #c5bbb9;
+    --color-hair: #bbd7ec;
+}
+
+body {
+    height: 100vh;
+    margin: 0;
+}
+
+.center {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}
+
+    #rick {
+        position: relative;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+
+        width: 100vw;
+        height: 100vh;
+        border: solid 1px black;
+    }
+
+        #head {
+            transform: translate(-50%, -50%);
+
+            width: 250px;
+            height: 380px;
+            border: solid 3px black;
+            border-radius: 55% 55% 60% 60%;
+            background-color: var(--color-skin);
+        }
+
+        .eyebrow {
+            background-color: var(--color-hair);
+            border: solid 3px black;
+            border-radius: 15px;
+
+            width: 105px;
+            height: 25px;
+        }
+
+        .eyebrow#left {
+            transform: translate(-80%, -390%) rotate(25deg);
+            border-right: var(--color-hair);
+            border-radius: 15px 7px 7px 15px;
+            animation: moveEyeBrowLeft 1.1s linear 1;
+        }
+
+        @keyframes moveEyeBrowLeft {
+            0% {
+                transform: translate(-80%, -390%) rotate(25deg);
+            }
+            50% {
+                transform: translate(-80%, -390%) rotate(10deg);
+            }
+            100% {
+                transform: translate(-80%, -390%) rotate(25deg);
+            }
+        }
+
+        .eyebrow#right {
+            transform: translate(7%, -352%) rotate(-7.5deg);
+            border-left: var(--color-hair);
+            border-radius: 0 15px 15px 0;
+            width: 90px;
+            animation: moveEyeBrowRight 1.1s linear 1;
+        }
+
+        @keyframes moveEyeBrowRight {
+            0% {
+                transform: translate(7%, -352%) rotate(-7.5deg);
+            }
+            50% {
+                transform: translate(7%, -350%) rotate(7deg);
+            }
+            100% {
+                transform: translate(7%, -352%) rotate(-7.5deg);
+            }
+        }
+
+        #group-eye {
+            transform: translate(-50%, -100%);
+
+            display: flex;
+            gap: 1em;
+        }
+
+        #eye {
+            width: 90px;
+            height: 90px;
+            border: solid 3px black;
+            border-radius: 100%;
+            background-color: white;
+        }
+
+            #pupil-left {
+                transform: translate(-450%, -30%);
+                width: 15px;
+                height: 15px;
+                border-radius: 100%;
+                background-color: black;
+                animation: movePupilLeft 1.1s linear 1;
+            }
+
+            @keyframes movePupilLeft {
+                0% {
+                    transform: translate(-450%, -30%);
+                }
+                50% {
+                    transform: translate(-600%, -200%);
+                }
+                100% {
+                    transform: translate(-450%, -30%);
+                }
+            }
+
+            #pupil-right {
+                transform: translate(350%, -50%);
+                width: 15px;
+                height: 15px;
+                border-radius: 100%;
+                background-color: black;
+                animation: movePupilRight 1.1s linear 1;
+            }
+
+            @keyframes movePupilRight {
+                0% {
+                    transform: translate(350%, -50%);
+                }
+                50% {
+                    transform: translate(150%, -200%);
+                }
+                100% {
+                    transform: translate(350%, -50%);
+                }
+            }
+
+        #nose, #nose-border {
+            transform: translate(-51%, -75%);
+            clip-path: ellipse(3% 12% at 51% 80%);
+        }
+
+        #nose {
+            background-color: var(--color-skin);
+
+            width: 500px;
+            height: 300px;
+        }
+        #nose-border {
+            background-color: black;
+
+            width: 600px;
+            height: 310px;
+        }
+        
+        #nose-hide {
+            transform: translate(-51%, -72.5%);
+            clip-path: inset(70% 46% 28% 48%);
+            background-color: var(--color-skin);
+
+            width: 500px;
+            height: 910px;
+        }
+
+        #hair, #hair::before {
+            clip-path: polygon(36% 78%, 28% 79%, 31% 73%, 20% 73%, 25% 65%, 15% 59%, 24% 52%, 7% 45%, 23% 38%, 9% 22%, 32% 27%, 32% 3%, 49% 19%, 71% 2%, 69% 25%, 91% 23%, 76% 39%, 93% 45%, 76% 53%, 85% 61%, 77% 66%, 82% 75%, 72% 73%, 73% 80%, 68% 78%);
+        }
+
+        #hair {
+            transform: translate(-52%, -55%);background-color: #000000;
+            width: 620px;
+            height: 620px;
+        }
+
+        #hair::before {
+            content: "";
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            background-color: var(--color-hair);
+            width: 600px;
+            height: 600px;
+        }
+
+        #mouth {
+            transform: translate(-51%, -61.5%);
+
+            clip-path: ellipse(23% 7% at 51% 78%);
+            background-color: black;
+            width: 380px;
+            height: 635px;
+            animation: moveMouth 1.1s linear 1;
+            
+        }
+
+        @keyframes moveMouth {
+            0% {
+                clip-path: ellipse(23% 7% at 51% 78%);
+            }
+            50% {
+                clip-path: ellipse(15% 2% at 51% 78%);
+            }
+            100% {
+                clip-path: ellipse(23% 7% at 51% 78%);
+            }
+        }
+
+        #mouth::after {
+            content: "";
+            position: absolute;
+            top: 6px;
+            left: 4px;
+            background-color: #703533;
+            clip-path: ellipse(22% 6.5% at 50% 77%);
+            width: 380px;
+            height: 635px;
+            animation: moveMouthAfter 1.1s linear 1;
+        }
+
+        @keyframes moveMouthAfter {
+            0% {
+                clip-path: ellipse(22% 6.5% at 50% 77%);
+            }
+            50% {
+                clip-path: ellipse(14% 1% at 50% 77%);
+            }
+            100% {
+                clip-path: ellipse(22% 6.5% at 50% 77%);
+            }
+        }
